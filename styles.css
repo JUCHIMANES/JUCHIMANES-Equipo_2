@@ -1,0 +1,214 @@
+/* Reseteo básico y estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #1b1717;
+  background-color: #fffaf0;
+}
+
+/* Estilo para centrar el texto sin afectar otros estilos */
+.texto-centrado {
+  text-align: center;
+  font-size: inherit; /* Mantiene el tamaño de fuente del elemento padre */
+  font-family: inherit; /* Mantiene la familia de fuente del elemento padre */
+}
+
+/* Botones superiores */
+.botones-superiores {
+  text-align: center;
+  padding: 20px;
+  background-color: #FFFAF0; /* Fondo semitransparente */
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.botones-superiores button {
+  background-color: #5cd5cb;
+  color: rgb(29, 27, 27);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.botones-superiores button:hover {
+  background-color: #4585a0;
+}
+
+/* Imagen de fondo y contenido principal */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin-top: 80px; /* Para que no tape los botones */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Hace que el fondo se quede fijo al hacer scroll */
+  background-image: url(./img/fondo.jpeg); /* Imagen inicial */
+  transition: background-image 2s ease-in-out; /* Transición suave de imagen */
+}
+
+/* Animación para cambiar entre múltiples imágenes */
+@keyframes slider {
+  0% { background-image: url(./img/fondo.jpeg); }
+  33% { background-image: url(./img/GRUPO.jpeg); }
+  66% { background-image: url(./img/preparacion.jpeg); }
+  100% { background-image: url(./img/final.jpeg); }
+}
+
+.hero {
+  animation: slider 10s infinite; /* Cambia cada 10 segundos de manera infinita */
+}
+.hero-content {
+  background-color: #00CED1; /* Fondo semitransparente para el texto */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  color: rgb(0, 0, 0); 
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: rgb(0, 0, 0);
+  font-size: 24px;
+}
+
+/* Estilos generales para el contenido de Misión, Visión, Autores y Evidencia */
+.section {
+  height: auto; /* Cambia de 100vh a auto para ajustarse al contenido */
+  min-height: 100vh; /* Asegura que la sección siempre ocupe al menos el 100% de la altura de la ventana */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: justify;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay; /* Combina imagen y color */
+}
+
+.mision {
+  background-color: #A9F5F2; /* Color de fondo específico */
+  background-image: url(./img/mision_vision.jpeg); /* Imagen de fondo específica */
+}
+
+.vision {
+  background-color: #A9F5F2;
+  background-image: url(./img/mision_vision.jpeg);
+}
+
+/* Estilo específico para la sección de autores */
+.autores.section {
+  padding-top: 80px; /* Ajusta el espacio superior para evitar que el contenido esté tapado por los botones */
+  background-color: #95f1ee; /* Color de fondo específico */
+  background-image: url(./img/fondo.jpeg); /* Imagen de fondo específica */
+}
+
+/* Estilo para el contenedor de contenido dentro de la sección */
+.autores .section-content {
+  padding: 20px; /* Espacio interno alrededor del texto */
+  text-align: justify; /* Justifica el texto */
+}
+
+/* Ajustes para los textos */
+.autores h1 {
+  font-size: 48px;
+  color: #333;
+  margin-bottom: 20px; /* Agrega espacio debajo del encabezado */
+}
+.autores h2 {
+  font-size: 25px;
+  color: #333;
+  margin-bottom: 20px; /* Agrega espacio debajo del encabezado */
+}
+.autores p {
+  font-size: 24px;
+  color: #1b1717;
+  max-width: 600px; /* Limita el ancho del texto para mejor legibilidad */
+  margin: 0 auto; /* Centra el párrafo horizontalmente */
+}
+
+/* Estilo específico para la sección de producto */
+.producto {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Asegura que el contenedor también ocupe todo el ancho */
+}
+
+.producto img {
+  width: 100%; /* Ajusta el porcentaje según sea necesario */
+  height: auto; /* Mantiene la proporción */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  display: block; /* Asegura que la imagen sea tratada como un bloque para que el margen funcione */
+}
+
+
+
+/* Estilo específico para la sección de evidencia */
+.evidencia {
+  background-color: #95f1ee;
+  background-image: url(./img/evide.png);
+  padding-top: 80px; /* Ajusta el espacio superior para evitar que el contenido esté tapado por los botones */
+}
+
+/* Asegúrate de que el título esté correctamente posicionado en la sección de evidencia */
+.evidencia h1 {
+  font-size: 48px;
+  color: #333; 
+  margin: 0; /* Elimina el margen superior si es necesario */
+  padding-top: 20px; /* Añade padding superior si necesitas un poco de espacio desde el borde */
+}
+.evidencia h2 {
+  font-size: 25px;
+  color: #333; 
+  margin-bottom: 25px; /* Agrega espacio debajo del encabezado */
+  padding-top: 60px; /* Añade padding superior si necesitas un poco de espacio desde el borde */
+}
+/* Estilo para el contenedor del PDF */
+.evidencia .section-content {
+  padding: 20px; /* Espacio interno alrededor del contenido */
+  text-align: justify; /* Justifica el texto */
+}
+
+.evidencia .section-content embed {
+  width: 100%;
+  height: 600px; /* Ajusta la altura según sea necesario */
+}
+/* Estilos para los textos */
+.section h1 {
+  font-size: 48px;
+  color: #333; 
+}
+
+.section p {
+  font-size: 24px;
+  color: #1b1717;
+  max-width: 600px; /* Limita el ancho del texto para mejor legibilidad */
+  padding: 20px;
+}
+
+/* Centrando el video */
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%; /* Ajusta el tamaño del contenedor del video */
+  margin: 20px auto; /* Centra el contenedor horizontalmente */
+}
+
+.video-container video {
+  max-width: 100%; /* Asegura que el video no exceda el tamaño del contenedor */
+  height: auto;
+}
